@@ -169,21 +169,17 @@
                 const serviciosIds = Array.from(checkboxes).map(cb => parseInt(cb.value));
                 const servicios = serviciosIds.map(id => ({ id: id }));
 
-                // Crear un payload robusto compatible con múltiples nomenclaturas de API
+                // Crear un payload robusto compatible con el modelo Client de Java
                 const payload = {
-                    nombre,
-                    primerApellido,
-                    segundoApellido,
-                    email,
-                    correo: email,
-                    password,
-                    contrasena: password,
-                    direccion,
-                    direccionFisica: direccion,
-                    telefono,
-                    segundoContacto,
-                    servicios,
-                    serviciosIds
+                    name: nombre,
+                    firstSurname: primerApellido,
+                    secondSurname: segundoApellido,
+                    email: email,
+                    password: password,
+                    address: direccion,
+                    phone: telefono,
+                    secondContact: segundoContacto,
+                    services: serviciosIds
                 };
 
                 // Activar estado de carga
